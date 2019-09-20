@@ -1,11 +1,16 @@
 package mflix.lessons;
 
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.naming.Name;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -188,6 +193,36 @@ public class BasicReads extends AbstractLesson {
 
     // If this feels ugly to you, don't worry. The driver provides a much
     // nicer way to compose your queries. More in a future lesson!
+
+  }
+
+  @Test
+  public void myBasicQueryTestAnyResult(){
+    try {
+      // getProperty calls getProperty on java.util.Properties
+      // I'm guessing Spring added its own properties from application.properties to java.util.Properties
+      // properties. Properties is a collection of key:value pairs where both are String
+
+      String mongoURI = getProperty("spring.mongodb.uri");
+      String databaseName = getProperty("spring.mongodb.database");
+      //MongoClients returns a client and takes dbs URI, then we get a database from the client passing in
+      // name of the database
+      MongoDatabase db = MongoClients.create(mongoURI).getDatabase(databaseName);
+      MongoCollection movies = db.getCollection("movies");
+
+      // We get results by getting a collection that is iterable. iterator() returns a MongoCursor
+      // to get a single result we need to call next() on the iterator
+      // cursor always points before first element in the collection
+      MongoCursor cursor = movies.find(new Document()).limit(1).iterator();
+      Document resultDoc = (Document)cursor.next();
+
+      Assert.assertNotNull(resultDoc);
+      System.out.println(resultDoc);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
 
   }
 
