@@ -1,8 +1,7 @@
 package mflix.lessons;
 
 import com.mongodb.client.AggregateIterable;
-import com.mongodb.client.model.Aggregates;
-import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.*;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.junit.Assert;
@@ -37,6 +36,48 @@ public class KedlawTests extends AbstractLesson{
 
 
         Assert.assertEquals(256,polandMovies.size());
+    }
+
+    @Test
+    public void multiStagePipeline(){
+    String country = "Poland";
+    List<Document> directrorsNoOfFilms = new ArrayList<>();
+
+    Bson countryFilter = Filters.eq("countries",country);
+    Bson matchStage = Aggregates.match(countryFilter);
+
+    Bson unwindDirectorsStage = Aggregates.unwind("$directors");
+
+    Bson projection = Projections.include("directors");
+    Bson projectionStage = Aggregates.project(projection);
+
+    //group by directors, creates a list of documents with directors as unique id fields
+        // sums the duplicates and stores the result of the accumulation in the new document
+        // in the count field
+    Bson groupStage = Aggregates.group("$directors",
+            Accumulators.sum("count",1));
+
+    Bson sortStage = Aggregates.sort(Sorts.descending("count"));
+
+    List<Bson> pipeline = new ArrayList<>();
+    pipeline.add(matchStage);
+    pipeline.add(projectionStage);
+    pipeline.add(unwindDirectorsStage);
+    pipeline.add(groupStage);
+    pipeline.add(sortStage);
+
+    AggregateIterable<Document> aggregateIterable = moviesCollection.aggregate(pipeline);
+
+    for(Document doc : aggregateIterable){
+        System.out.println(doc);
+        directrorsNoOfFilms.add(doc);
+
+    }
+    Assert.assertEquals(141,directrorsNoOfFilms.size());
+    Assert.assertEquals("Andrzej Wajda",directrorsNoOfFilms.get(0).get("_id"));
+
+
+
     }
 
 
