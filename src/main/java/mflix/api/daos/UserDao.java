@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
+import javax.print.Doc;
 import java.text.MessageFormat;
 import java.util.Map;
 
@@ -33,7 +34,7 @@ public class UserDao extends AbstractMFlixDao {
   private final MongoCollection<User> usersCollection;
   //TODO> Ticket: User Management - do the necessary changes so that the sessions collection
   //returns a Session object
-  private final MongoCollection<Document> sessionsCollection;
+  private final MongoCollection<Session> sessionsCollection;
 
   private final Logger log;
 
@@ -46,11 +47,13 @@ public class UserDao extends AbstractMFlixDao {
             MongoClientSettings.getDefaultCodecRegistry(),
             fromProviders(PojoCodecProvider.builder().automatic(true).build()));
 
-    usersCollection = db.getCollection("users", User.class).withCodecRegistry(pojoCodecRegistry);
+    usersCollection = db.getCollection("users", User.class).withCodecRegistry(pojoCodecRegistry)
+            .withWriteConcern(WriteConcern.MAJORITY);
     log = LoggerFactory.getLogger(this.getClass());
     //TODO> Ticket: User Management - implement the necessary changes so that the sessions
     // collection returns a Session objects instead of Document objects.
-    sessionsCollection = db.getCollection("sessions");
+    sessionsCollection = db.getCollection("sessions",Session.class)
+            .withCodecRegistry(pojoCodecRegistry);
   }
 
   /**
@@ -78,7 +81,14 @@ public class UserDao extends AbstractMFlixDao {
   public boolean createUserSession(String userId, String jwt) {
     //TODO> Ticket: User Management - implement the method that allows session information to be
     // stored in it's designated collection.
-    return false;
+    Session newSession = new Session();
+    newSession.setUserId(userId);
+    newSession.setJwt(jwt);
+    Document query = new Document("user_id",userId);
+    sessionsCollection.updateOne(query,new Document("$set" ,newSession),new UpdateOptions().upsert(true));
+
+
+    return true;
     //TODO > Ticket: Handling Errors - implement a safeguard against
     // creating a session with the same jwt token.
   }
@@ -90,7 +100,8 @@ public class UserDao extends AbstractMFlixDao {
    * @return User object or null.
    */
   public User getUser(String email) {
-    User user = null;
+    Document emailDoc = new Document("email",email);
+    User user = usersCollection.find(emailDoc).first();
     //TODO> Ticket: User Management - implement the query that returns the first User object.
     return user;
   }
@@ -104,12 +115,16 @@ public class UserDao extends AbstractMFlixDao {
   public Session getUserSession(String userId) {
     //TODO> Ticket: User Management - implement the method that returns Sessions for a given
     // userId
-    return null;
+    Document userIdDoc = new Document("user_id",userId);
+    Session userSession = sessionsCollection.find(userIdDoc).first();
+    return userSession;
   }
 
   public boolean deleteUserSessions(String userId) {
     //TODO> Ticket: User Management - implement the delete user sessions method
-    return false;
+    Document userIdDoc = new Document("user_id",userId);
+    sessionsCollection.deleteOne(userIdDoc);
+    return true;
   }
 
   /**
@@ -121,9 +136,12 @@ public class UserDao extends AbstractMFlixDao {
   public boolean deleteUser(String email) {
     // remove user sessions
     //TODO> Ticket: User Management - implement the delete user method
+    deleteUserSessions(email);
+    Document emailDoc = new Document("email",email);
+    usersCollection.deleteOne(emailDoc);
     //TODO > Ticket: Handling Errors - make this method more robust by
     // handling potential exceptions.
-    return false;
+    return true;
   }
 
   /**
@@ -137,8 +155,18 @@ public class UserDao extends AbstractMFlixDao {
   public boolean updateUserPreferences(String email, Map<String, ?> userPreferences) {
     //TODO> Ticket: User Preferences - implement the method that allows for user preferences to
     // be updated.
+    if(userPreferences==null){
+      throw new IncorrectDaoOperation("User preferences are null");
+    }
+    Document query = new Document("email",email);
+    Document setPreferences = new Document("$set",new Document("preferences",userPreferences));
+    usersCollection.updateOne(query,setPreferences,new UpdateOptions().upsert(true));
+
     //TODO > Ticket: Handling Errors - make this method more robust by
     // handling potential exceptions when updating an entry.
-    return false;
+    return true;
   }
+
+  // Ticket: User Preferences | UserDao.updateUserPreferences implemented | createUserSession() changed to
+  // update with upsert (login problems)
 }

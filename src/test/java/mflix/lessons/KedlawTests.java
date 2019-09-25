@@ -2,6 +2,7 @@ package mflix.lessons;
 
 import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.model.*;
+import mflix.api.daos.UserDao;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 import org.junit.Assert;
@@ -79,6 +80,5 @@ public class KedlawTests extends AbstractLesson{
 
 
     }
-
-
+    
 }

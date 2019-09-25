@@ -5,6 +5,7 @@ import com.mongodb.client.MongoDatabase;
 import mflix.api.models.Session;
 import mflix.api.models.User;
 import mflix.config.MongoDBConfiguration;
+import org.bson.BsonDocument;
 import org.bson.Document;
 import org.junit.After;
 import org.junit.Assert;
@@ -116,4 +117,5 @@ public class UserTest extends TicketTest {
         "User data should not be found after user been deleted. Make sure you delete data from users collection",
         dao.getUser(testUser.getEmail()));
   }
+
 }
