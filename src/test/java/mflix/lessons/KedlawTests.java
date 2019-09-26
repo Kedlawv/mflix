@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootTest
@@ -80,5 +81,21 @@ public class KedlawTests extends AbstractLesson{
 
 
     }
-    
+
+    @Test
+    public void testHowDocumentLooks(){
+        Document appendCommentsStage = new Document("$lookup",
+                new Document("from", "comments")
+                        .append("let",
+                                new Document("id", "$_id"))
+                        .append("pipeline", Arrays.asList(new Document("$match",
+                                        new Document("$expr",
+                                                new Document("$eq", Arrays.asList("$movie_id", "$$id")))),
+                                new Document("$sort",
+                                        new Document("date", -1L))))
+                        .append("as", "comments"));
+        System.out.println(appendCommentsStage);
+
+    }
+
 }

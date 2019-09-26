@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ac51884-15dc-460d-9d42-b5ef4e088b10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mflix/api/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mflix/api/daos/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mflix/api/daos/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mflix/api/daos/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mflix/api/daos/MovieDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mflix/api/daos/MovieDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/mflix/lessons/KedlawTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mflix/lessons/KedlawTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mflix/api/daos/MovieDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
+            <state relative-caret-position="301">
+              <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2587#2632#0" expanded="true" />
@@ -34,44 +33,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/mflix/lessons/BasicWrites.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/GetCommentsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-377">
-              <caret line="151" column="13" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mflix/api/daos/UserDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="170" column="41" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="170" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/UserPreferencesTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1205">
-              <caret line="106" column="40" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/mflix/api/models/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
-              <folding>
-                <element signature="e#737#738#0" expanded="true" />
-                <element signature="e#765#766#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -88,20 +53,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/mflix/lessons/KedlawTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2511">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="409">
+              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/UserTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1296">
-              <caret line="79" column="32" lean-forward="true" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -139,10 +95,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/test/java/mflix/lessons/QueryBuilders.java" />
         <option value="$PROJECT_DIR$/src/test/java/mflix/lessons/BasicReads.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mflix/api/daos/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mflix/api/daos/UserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mflix/api/daos/MovieDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/mflix/lessons/KedlawTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/mflix/api/daos/UserTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mflix/api/daos/UserDao.java" />
       </list>
     </option>
   </component>
@@ -158,8 +114,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,6 +226,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -305,7 +261,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserPreferencesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GetCommentsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mflix" />
       <extension name="coverage">
         <pattern>
@@ -314,8 +270,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mflix.api.daos" />
-      <option name="MAIN_CLASS_NAME" value="mflix.api.daos.UserPreferencesTest" />
+      <option name="MAIN_CLASS_NAME" value="mflix.api.daos.GetCommentsTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KedlawTests.testHowDocumentLooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mflix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mflix.lessons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mflix.lessons" />
+      <option name="MAIN_CLASS_NAME" value="mflix.lessons.KedlawTests" />
+      <option name="METHOD_NAME" value="testHowDocumentLooks" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -331,22 +303,6 @@
       <option name="PACKAGE_NAME" value="mflix.api.daos" />
       <option name="MAIN_CLASS_NAME" value="mflix.api.daos.UserTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.testDeleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mflix" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mflix.api.daos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mflix.api.daos" />
-      <option name="MAIN_CLASS_NAME" value="mflix.api.daos.UserTest" />
-      <option name="METHOD_NAME" value="testDeleteUser" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -370,10 +326,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.KedlawTests.testHowDocumentLooks" />
+        <item itemvalue="JUnit.GetCommentsTest" />
         <item itemvalue="JUnit.UserTest" />
         <item itemvalue="JUnit.UserTest.testLogin" />
-        <item itemvalue="JUnit.UserPreferencesTest" />
-        <item itemvalue="JUnit.UserTest.testDeleteUser" />
       </list>
     </recent_temporary>
   </component>
@@ -444,19 +400,17 @@
       <option name="project" value="LOCAL" />
       <updated>1569410300889</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ticket: Update Operators&#10;Ticket: User Preferences | UserDao.updateUserPreferences implemented | createUserSession() changed to update with upsert (login problems)">
+      <created>1569437281783</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569437281783</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserTest_preferencesTest - 2019.09.25 at 19h 27m 18s.xml">
-      <configuration name="UserTest.preferencesTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserPreferencesTest_testUpdateSinglePreferences - 2019.09.25 at 19h 53m 56s.xml">
-      <configuration name="UserPreferencesTest.testUpdateSinglePreferences" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserPreferencesTest - 2019.09.25 at 19h 54m 12s.xml">
-      <configuration name="UserPreferencesTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserPreferencesTest - 2019.09.25 at 20h 01m 16s.xml">
       <configuration name="UserPreferencesTest" configurationId="JUnit" />
     </history-entry>
@@ -478,12 +432,21 @@
     <history-entry file="UserTest - 2019.09.25 at 20h 35m 57s.xml">
       <configuration name="UserTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GetCommentsTest - 2019.09.26 at 14h 51m 53s.xml">
+      <configuration name="GetCommentsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GetCommentsTest - 2019.09.26 at 15h 34m 05s.xml">
+      <configuration name="GetCommentsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KedlawTests_testHowDocumentLooks - 2019.09.26 at 15h 41m 30s.xml">
+      <configuration name="KedlawTests.testHowDocumentLooks" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -521,7 +484,8 @@
     <MESSAGE value="KedlawTests.multiStagePipeline()&#10;different task coded to the example provided | massiveHeadache == true&#10;Test passed" />
     <MESSAGE value="Ticket: Faceted Search | getMoviesFaceted() only added the aggregation stages to the pipeline in the right order" />
     <MESSAGE value="Ticket: Paging | added skip() and limit() to the movies query in the getMoviesByGenre()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ticket: Paging | added skip() and limit() to the movies query in the getMoviesByGenre()" />
+    <MESSAGE value="Ticket: Update Operators&#10;Ticket: User Preferences | UserDao.updateUserPreferences implemented | createUserSession() changed to update with upsert (login problems)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ticket: Update Operators&#10;Ticket: User Preferences | UserDao.updateUserPreferences implemented | createUserSession() changed to update with upsert (login problems)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/ConnectionTest.java">
@@ -701,21 +665,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mflix/api/daos/MovieDao.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/lessons/BasicWrites.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="82" column="27" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2587#2632#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3645">
+          <caret line="151" column="13" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/lessons/BasicWrites.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/UserPreferencesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-377">
-          <caret line="151" column="13" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="13" />
+        <state relative-caret-position="2430">
+          <caret line="106" column="40" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/UserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
@@ -723,37 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/lessons/KedlawTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2511">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/UserPreferencesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1205">
-          <caret line="106" column="40" lean-forward="true" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/UserTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="79" column="32" lean-forward="true" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mflix/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -770,10 +706,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mflix/api/daos/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="170" column="41" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="170" selection-end-column="41" />
+        <state relative-caret-position="1860">
+          <caret line="167" column="3" lean-forward="true" selection-start-line="167" selection-start-column="3" selection-end-line="167" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mflix/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/lessons/KedlawTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/mflix/api/daos/GetCommentsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mflix/api/daos/MovieDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="71" column="32" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2587#2632#0" expanded="true" />
           </folding>
         </state>
       </provider>
