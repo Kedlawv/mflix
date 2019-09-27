@@ -29,7 +29,8 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 @SuppressWarnings("unchecked")
 @SpringBootTest
-public class UsingPojoLesson extends AbstractLesson {
+public class
+UsingPojoLesson extends AbstractLesson {
 
   private ObjectId actor1Id;
   private ObjectId actor2Id;

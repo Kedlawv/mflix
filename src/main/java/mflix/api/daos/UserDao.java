@@ -5,6 +5,7 @@ import com.mongodb.MongoWriteException;
 import com.mongodb.WriteConcern;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.UpdateOptions;
 import com.mongodb.client.model.Updates;
 import com.mongodb.client.result.DeleteResult;
@@ -15,6 +16,7 @@ import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,8 +66,14 @@ public class UserDao extends AbstractMFlixDao {
    */
   public boolean addUser(User user) {
     //TODO > Ticket: Durable Writes -  you might want to use a more durable write concern here!
-    usersCollection.insertOne(user);
-    return true;
+    User userCheck = usersCollection.find(new Document("email", user.getEmail())).first();
+    if(userCheck == null){
+      usersCollection.insertOne(user);
+      return true;
+    }else{
+      throw new IncorrectDaoOperation("user with email: " + user.getEmail() + " already exists");
+    }
+
     //TODO > Ticket: Handling Errors - make sure to only add new users
     // and not users that already exist.
 
@@ -81,14 +89,17 @@ public class UserDao extends AbstractMFlixDao {
   public boolean createUserSession(String userId, String jwt) {
     //TODO> Ticket: User Management - implement the method that allows session information to be
     // stored in it's designated collection.
-    Session newSession = new Session();
-    newSession.setUserId(userId);
-    newSession.setJwt(jwt);
-    Document query = new Document("user_id",userId);
-    sessionsCollection.updateOne(query,new Document("$set" ,newSession),new UpdateOptions().upsert(true));
-
-
+    Session userSession = sessionsCollection.find(Filters.eq("user_id", userId)).first();
+    if (userSession == null) {
+      //TODO> Ticket: User Management - implement the method that allows session information to be
+      // stored in it's designated collection.
+      userSession = new Session();
+      userSession.setUserId(userId);
+      userSession.setJwt(jwt);
+      sessionsCollection.insertOne(userSession);
+    }
     return true;
+
     //TODO > Ticket: Handling Errors - implement a safeguard against
     // creating a session with the same jwt token.
   }

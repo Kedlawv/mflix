@@ -156,4 +156,30 @@ public class UpdateCreateCommentTest extends TicketTest {
 
     Assert.assertNotNull(comment);
   }
+
+  @Test
+  public void testUserUpdatesOwnCommentsKedlawNotRandomText() {
+    Comment fakeComment = fakeCommentWithId();
+    dao.addComment(fakeComment);
+    String expectedCommentText = "This is the expected comment text";
+
+    Assert.assertTrue(
+            "Should be able to update his own comments. Check updateComment implementation",
+            dao.updateComment(fakeComment.getId(), expectedCommentText, validEmail));
+
+    Document actualComment =
+            (Document)
+                    commentsCollection()
+                            .find(new Document("_id", new ObjectId(fakeCommentId)))
+                            .first();
+    System.out.println("^^^^^^^^^^^" + actualComment);
+
+    Assert.assertEquals(
+            "Comment text should match. Check updateComment implementation",
+            expectedCommentText,
+            actualComment.getString("text"));
+
+    Assert.assertEquals("Commenter email should match the user email",
+            validEmail, actualComment.getString("email"));
+  }
 }
